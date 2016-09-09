@@ -77,7 +77,7 @@ Now we're ready to set up our plaintext message; we're using a 6x6 grid, because
 
 The first operation we'll perform on our plaintext is a permutation; this doesn't change the value of any characters, but simply moves their position around in the grid. This is often called a *P-box* (P for permutation) and it helps diffuse the structure of the plaintext.
 
-The first row of our key is `7 3 5 7 9 1`, so we'll use this to determine how and where the characters move. In this cipher, we'll choose to move the characters column by column. There are six columns and we have six key digits to work with. So, always starting with the top-most letter in the column, the first column will shift up by 7, the second column by 3, the third column by 5, and so on. When you've shifted all of the columns, you'll get this:
+The first row of our key is `7 3 5 7 9 1`, so we'll use this to determine how and where the characters move. In this cipher, we'll choose to move the characters column by column. There are six columns and we have six key digits to work with. So, always starting with the top-most letter in the column, the first column will shift down by 7, the second column by 3, the third column by 5, and so on. When you've shifted all of the columns, you'll get this:
 
 ![image](https://www.justintroutman.com/images/pbox1-1.png)
 
@@ -100,7 +100,7 @@ Now, just like we moved the columns down, we will do the same for the rows, by m
 
 Now that we've shifted our plaintext message by column and by row, we want to actually change their value; this is done through what's called a substitution box, or *S-box*. This cipher uses two kinds -- one kind that simply changes the value of each letter, which is what we'll use now, and then what's called a "look-up table", where values are mapped out using coordinates. We'll talk about that later.
 
-Our next key is `8 0 8 6 8 8`. Starting with the first letter in the 6x6 grid (upper left corner "T"), we want to shift its value forward in the alphabet by 8 spaces. The next letter, "E", will move forward 0 spaces, because the second number in our key is "0". We re-use the `8 0 8 6 8 8` key for each row. Also, keep in mind that our alphabet is alphanumeric, so it doesn't end with "Z". It's actually a-z, followed by 0-9. This makes up 36 characters, which is why we've chosen a 6x6 grid. When doing your value shifts, if your letter is Y, and you need to shift it three places, you would count like this: "Z, 0, 1", so the new value would be "1".d
+Our next key is `8 0 8 6 8 8`. Starting with the first letter in the 6x6 grid (upper left corner "T"), we want to shift its value forward in the alphabet by 8 spaces. The next letter, "E", will move forward 0 spaces, because the second number in our key is "0". We re-use the `8 0 8 6 8 8` key for each row. Also, keep in mind that our alphabet is alphanumeric, so it doesn't end with "Z". It's actually a-z, followed by 0-9. This makes up 36 characters, which is why we've chosen a 6x6 grid. When doing your value shifts, if your letter is Y, and you need to shift it three places, you would count like this: "Z, 0, 1", so the new value would be "1".
 
 ## Congrats! You've encrypted!
 
@@ -137,7 +137,7 @@ Okay, so now we have this first phase out of the way , but leaving it like this 
 
 Remember that we've used the first three rows of our full key. The first to shift the columns down, the second to shift the rows right, and the third to shift the values of each letter forward. We still have three rows of key left.
 
-Using this new grid of numbers above, and the same steps we used to encrypt our plaintext, use the fourth key (`8 8 4 4 6 6`) to shift the rows right, the fifth key (`6 2 8 0 2 4`) to shift the shift the columns, and the sixth and final key (`8 0 8 2 6 0`) to shift the values forward.
+Using this new grid of numbers above, and the same steps we used to encrypt our plaintext, use the fourth key (`8 8 4 4 6 6`) to shift the rows right, the fifth key (`6 2 8 0 2 4`) to shift the columns down, and the sixth and final key (`8 0 8 2 6 0`) to shift the values forward.
 
 NOTE: The rule this time is that we'll only use numbers for shifting values; for example, if your number is 8, and you need to shift forward four spaces, you'll count like this: "9, 0, 1, 2", where your new value is "2". So that MACs look distinct from ciphertext, we won't wrap around and use a-z. This way, ciphertext can be alphanumeric, while the MAC is numeric; this is just an aesthetic choice.
 
