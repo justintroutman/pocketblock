@@ -1,5 +1,5 @@
 %% PocketBlock | Barebones 2D Template for Pockenacci / build 0.8 ``banker pony''
-%% (C) 2016 Justin Troutman | GPLv3
+%% (C) 2017 Justin Troutman | GPLv3
 
 \documentclass[border=1cm]{standalone}
 
@@ -7,6 +7,12 @@
 
 \usepackage{tikz}
 \usetikzlibrary{positioning}
+
+%% set global font
+
+\usepackage{PTSansCaption}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
 
 \input{colorway.tex} % user-customizable colorway scheme; default is mgzy @ 65 opacity
 
@@ -67,6 +73,22 @@
 \draw[rest] (3,1) rectangle (4,0); %% row 6, column 4
 \draw[play] (4,1) rectangle (5,0); %% row 6, column 5
 \draw[rest] (5,1) rectangle (6,0); %% row 6, column 6 (rightmost; bottom right corner)
+
+%% set coordinates for lookups
+
+\node[coord] at (0.5,6.7) {A}; %% top row, first (leftmost)
+\node[coord] at (1.5,6.7) {E}; %% top row, second
+\node[coord] at (2.5,6.7) {I}; %% top row, third
+\node[coord] at (3.5,6.7) {O}; %% top row, fourth
+\node[coord] at (4.5,6.7) {U}; %% top row, fifth
+\node[coord] at (5.5,6.7) {Y}; %% top row, sixth (rightmost)
+
+\node[coord] at (-0.7,5.5) {A}; %% left side, first (top)
+\node[coord] at (-0.7,4.5) {E}; %% left side, second
+\node[coord] at (-0.7,3.5) {I}; %% left side, third
+\node[coord] at (-0.7,2.5) {O}; %% left side, fourth
+\node[coord] at (-0.7,1.5) {U}; %% left side, fifth
+\node[coord] at (-0.7,0.5) {Y}; %% left side, sixth (bottom)
 
 \end{tikzpicture}
 
