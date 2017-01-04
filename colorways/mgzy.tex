@@ -1,0 +1,33 @@
+%% PocketBlock | mgzy colorway | (C) 2017 Justin Troutman | GPLv3
+
+%% Do not build this file; it's to be loaded via ``\input{}'' in a parent file.
+%% Before your \begin{document} declaration, type: \input{colorway.tex}
+
+%% Set font, along with draw line widths and joints for entire 6x6 grid
+
+\tikzstyle{pockenacci}=[on grid,
+                  font=\bfseries,
+                  line width=.6mm,
+                  line join=bevel]
+
+%% Set draw lines to white, with a fill opacity of 65
+
+\tikzstyle{rest}=[white,
+                  fill=rest!65]
+
+\tikzstyle{play}=[white,
+                  fill=play!65]
+
+%% Set coordinate font size to \Large, with an opacity of 85
+
+\tikzstyle{coord}=[font=\Large,
+                color=coord!85]
+
+%% Define RGB values for play and rest fills
+
+\definecolor{play}{RGB}{47,16,105} % purple
+\definecolor{rest}{RGB}{85,168,176} % teal
+
+%% Define RGB values for coordinates
+
+\definecolor{coord}{RGB}{83,86,90} % gray
