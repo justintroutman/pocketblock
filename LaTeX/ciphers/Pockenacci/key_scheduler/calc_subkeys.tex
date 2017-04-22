@@ -1,0 +1,89 @@
+%% perform calculations for all subkeys; 36 total
+
+%% "intuitive version" for LaTeX/TikZ novices
+
+\pgfmathtruncatemacro{\kone}{mod(\ione + \itwo,10)}
+\pgfmathtruncatemacro{\ktwo}{mod(\itwo + \ithree,10)}
+\pgfmathtruncatemacro{\kthree}{mod(\ithree + \ifour,10)}
+\pgfmathtruncatemacro{\kfour}{mod(\ifour + \ifive,10)}
+\pgfmathtruncatemacro{\kfive}{mod(\ifive + \isix,10)}
+\pgfmathtruncatemacro{\ksix}{mod(\isix + \ione,10)}
+
+\pgfmathtruncatemacro{\kseven}{mod(\kone + \ktwo,10)}
+\pgfmathtruncatemacro{\keight}{mod(\ktwo + \kthree,10)}
+\pgfmathtruncatemacro{\knine}{mod(\kthree + \kfour,10)}
+\pgfmathtruncatemacro{\kten}{mod(\kfour + \kfive,10)}
+\pgfmathtruncatemacro{\keleven}{mod(\kfive + \ksix,10)}
+\pgfmathtruncatemacro{\ktwelve}{mod(\ksix + \kone,10)}
+
+\pgfmathtruncatemacro{\kthirteen}{mod(\kseven + \keight,10)}
+\pgfmathtruncatemacro{\kfourteen}{mod(\keight + \knine,10)}
+\pgfmathtruncatemacro{\kfifteen}{mod(\knine + \kten,10)}
+\pgfmathtruncatemacro{\ksixteen}{mod(\kten + \keleven,10)}
+\pgfmathtruncatemacro{\kseventeen}{mod(\keleven + \ktwelve,10)}
+\pgfmathtruncatemacro{\keighteen}{mod(\ktwelve + \kseven,10)}
+
+\pgfmathtruncatemacro{\knineteen}{mod(\kthirteen + \kfourteen,10)}
+\pgfmathtruncatemacro{\ktwenty}{mod(\kfourteen + \kfifteen,10)}
+\pgfmathtruncatemacro{\ktwentyone}{mod(\kfifteen + \ksixteen,10)}
+\pgfmathtruncatemacro{\ktwentytwo}{mod(\ksixteen + \kseventeen,10)}
+\pgfmathtruncatemacro{\ktwentythree}{mod(\kseventeen + \keighteen,10)}
+\pgfmathtruncatemacro{\ktwentyfour}{mod(\keighteen + \kthirteen,10)}
+
+\pgfmathtruncatemacro{\ktwentyfive}{mod(\knineteen + \ktwenty,10)}
+\pgfmathtruncatemacro{\ktwentysix}{mod(\ktwenty + \ktwentyone,10)}
+\pgfmathtruncatemacro{\ktwentyseven}{mod(\ktwentyone + \ktwentytwo,10)}
+\pgfmathtruncatemacro{\ktwentyeight}{mod(\ktwentytwo + \ktwentythree,10)}
+\pgfmathtruncatemacro{\ktwentynine}{mod(\ktwentythree + \ktwentyfour,10)}
+\pgfmathtruncatemacro{\kthirty}{mod(\ktwentyfour + \knineteen,10)}
+
+\pgfmathtruncatemacro{\kthirtyone}{mod(\ktwentyfive + \ktwentysix,10)}
+\pgfmathtruncatemacro{\kthirtytwo}{mod(\ktwentysix + \ktwentyseven,10)}
+\pgfmathtruncatemacro{\kthirtythree}{mod(\ktwentyseven + \ktwentyeight,10)}
+\pgfmathtruncatemacro{\kthirtyfour}{mod(\ktwentyeight + \ktwentynine,10)}
+\pgfmathtruncatemacro{\kthirtyfive}{mod(\ktwentynine + \kthirty,10)}
+\pgfmathtruncatemacro{\kthirtysix}{mod(\kthirty + \ktwentyfive,10)}
+
+%% place calculated node values within node blocks
+
+\node[nodetext] at (0.5,5.5) {\kone};
+\node[nodetext] at (1.5,5.5) {\ktwo};
+\node[nodetext] at (2.5,5.5) {\kthree};
+\node[nodetext] at (3.5,5.5) {\kfour};
+\node[nodetext] at (4.5,5.5) {\kfive};
+\node[nodetext] at (5.5,5.5) {\ksix};
+
+\node[nodetext] at (0.5,4.5) {\kseven};
+\node[nodetext] at (1.5,4.5) {\keight};
+\node[nodetext] at (2.5,4.5) {\knine};
+\node[nodetext] at (3.5,4.5) {\kten};
+\node[nodetext] at (4.5,4.5) {\keleven};
+\node[nodetext] at (5.5,4.5) {\ktwelve};
+
+\node[nodetext] at (0.5,3.5) {\kthirteen};
+\node[nodetext] at (1.5,3.5) {\kfourteen};
+\node[nodetext] at (2.5,3.5) {\kfifteen};
+\node[nodetext] at (3.5,3.5) {\ksixteen};
+\node[nodetext] at (4.5,3.5) {\kseventeen};
+\node[nodetext] at (5.5,3.5) {\keighteen};
+
+\node[nodetext] at (0.5,2.5) {\knineteen};
+\node[nodetext] at (1.5,2.5) {\ktwenty};
+\node[nodetext] at (2.5,2.5) {\ktwentyone};
+\node[nodetext] at (3.5,2.5) {\ktwentytwo};
+\node[nodetext] at (4.5,2.5) {\ktwentythree};
+\node[nodetext] at (5.5,2.5) {\ktwentyfour};
+
+\node[nodetext] at (0.5,1.5) {\ktwentyfive};
+\node[nodetext] at (1.5,1.5) {\ktwentysix};
+\node[nodetext] at (2.5,1.5) {\ktwentyseven};
+\node[nodetext] at (3.5,1.5) {\ktwentyeight};
+\node[nodetext] at (4.5,1.5) {\ktwentynine};
+\node[nodetext] at (5.5,1.5) {\kthirty};
+
+\node[nodetext] at (0.5,0.5) {\kthirtyone};
+\node[nodetext] at (1.5,0.5) {\kthirtytwo};
+\node[nodetext] at (2.5,0.5) {\kthirtythree};
+\node[nodetext] at (3.5,0.5) {\kthirtyfour};
+\node[nodetext] at (4.5,0.5) {\kthirtyfive};
+\node[nodetext] at (5.5,0.5) {\kthirtysix};
