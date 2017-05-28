@@ -8,8 +8,6 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 
-\input{calc_initial.tex}
-
 %% set global font
 
 \usepackage{PTSansCaption}
@@ -20,7 +18,9 @@
 
 \begin{document}
 
-\getRandom %% pull random data for use in key scheduling
+\input{auto_calc_initial.tex} % generates six random numbers to seed key scheduler; default; comment out to turn off
+
+%% \input{manual_calc_initial.tex} % user defines six desired numbers to seed key scheduler; uncomment to turn on
 
 \pagecolor{white} %% set to match white draw lines for blocks in colorway.tex
 
