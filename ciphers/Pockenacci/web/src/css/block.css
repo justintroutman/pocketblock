@@ -2,7 +2,7 @@ body {
   margin: 50px;
 }
 
-.grid {
+.block {
   display: grid;
   grid-template-columns: 75px 75px 75px 75px 75px 75px;
   grid-gap: 6px;
@@ -10,7 +10,7 @@ body {
   color: #444;
 }
 
-.box {
+.charbox {
   background-color: #55A8B0;
   color: #fff;
   border-radius: 0px;
