@@ -10,7 +10,18 @@ body {
   color: #444;
 }
 
-.charbox {
+.charbox-play {
+  background-color: #2F1069;
+  color: #fff;
+  border-radius: 0px;
+  padding: 20px;
+  font-family: Lato;
+  font-size: 175%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.charbox-rest {
   background-color: #55A8B0;
   color: #fff;
   border-radius: 0px;
