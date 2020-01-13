@@ -1,5 +1,7 @@
 %% define command for generating six random initial seed values
 
+\pgfmathsetseed{\number\pdfrandomseed} %% generate new random seed each compile
+
 \newcommand\getRandom{
   \pgfmathsetmacro{\ione}{random(0,9)}
   \pgfmathsetmacro{\itwo}{random(0,9)}
