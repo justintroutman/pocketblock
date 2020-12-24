@@ -1,6 +1,6 @@
 # pocketblock
 
-*pocketblock* is the barebones form of a new class of teaching-oriented cryptographic primitives called *bantamweight cryptography*. It's expressed in a visual syntax that centers around *blockwise* movement of alphanumeric values across a grid, making it easily committed to memory, easily calculable by mind, and easily implemented by hand -- a handheld algorithm, if you will, easily tucked into one's cebebral pocket.
+*pocketblock* is the barebones form of a new class of teaching-oriented cryptographic primitives called *bantamweight cryptography*. Bantamweight primitives are scaled-down models of modern cryptographic primitives that preserve the conceptual framework of real-world ciphers without the burden of mathematical complexity. pocketblock is expressed in a visual syntax that centers around the *blockwise* movement of alphanumeric values within a grid, making it easily committed to memory, easily calculable by mind, and easily implemented by hand -- a handheld algorithm, if you will, easily tucked into one's cebebral pocket.
 
 
 ## pockenacci
